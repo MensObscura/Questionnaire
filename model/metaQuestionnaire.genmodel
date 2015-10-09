@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/Questionnaire/src" modelPluginID="Questionnaire"
+    modelName="Questionnaire" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>metaQuestionnaire.ecore</foreignModel>
+  <genPackages prefix="Questionnaire" disposableProviderFactory="true" ecorePackage="metaQuestionnaire.ecore#/">
+    <genClasses ecoreClass="metaQuestionnaire.ecore#//Questionnaire">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metaQuestionnaire.ecore#//Questionnaire/titre"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metaQuestionnaire.ecore#//Questionnaire/dep"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metaQuestionnaire.ecore#//Questionnaire/questions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metaQuestionnaire.ecore#//Questionnaire/arr"/>
+    </genClasses>
+    <genClasses ecoreClass="metaQuestionnaire.ecore#//Titre"/>
+    <genClasses ecoreClass="metaQuestionnaire.ecore#//Depart">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metaQuestionnaire.ecore#//Depart/firstEtape"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metaQuestionnaire.ecore#//Depart/nom"/>
+    </genClasses>
+    <genClasses ecoreClass="metaQuestionnaire.ecore#//Arrive">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metaQuestionnaire.ecore#//Arrive/nom"/>
+    </genClasses>
+    <genClasses ecoreClass="metaQuestionnaire.ecore#//QuestionOuverte">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metaQuestionnaire.ecore#//QuestionOuverte/reponse"/>
+    </genClasses>
+    <genClasses ecoreClass="metaQuestionnaire.ecore#//QuestionFermee">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metaQuestionnaire.ecore#//QuestionFermee/oui"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metaQuestionnaire.ecore#//QuestionFermee/non"/>
+    </genClasses>
+    <genClasses ecoreClass="metaQuestionnaire.ecore#//QuestionChoixMultiple">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metaQuestionnaire.ecore#//QuestionChoixMultiple/reponse"/>
+    </genClasses>
+    <genClasses ecoreClass="metaQuestionnaire.ecore#//ReponseText">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metaQuestionnaire.ecore#//ReponseText/nom"/>
+    </genClasses>
+    <genClasses ecoreClass="metaQuestionnaire.ecore#//ReponseOui">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metaQuestionnaire.ecore#//ReponseOui/nom"/>
+    </genClasses>
+    <genClasses ecoreClass="metaQuestionnaire.ecore#//ReponseNon">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metaQuestionnaire.ecore#//ReponseNon/nom"/>
+    </genClasses>
+    <genClasses ecoreClass="metaQuestionnaire.ecore#//ReponseChoix"/>
+    <genClasses ecoreClass="metaQuestionnaire.ecore#//Question">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metaQuestionnaire.ecore#//Question/nextEtape"/>
+    </genClasses>
+    <genClasses ecoreClass="metaQuestionnaire.ecore#//Etape"/>
+    <genClasses ecoreClass="metaQuestionnaire.ecore#//Reponse"/>
+    <genClasses ecoreClass="metaQuestionnaire.ecore#//ReponseRedirigable">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metaQuestionnaire.ecore#//ReponseRedirigable/questionRedirect"/>
+    </genClasses>
+    <genClasses ecoreClass="metaQuestionnaire.ecore#//ElementAvecNom">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metaQuestionnaire.ecore#//ElementAvecNom/nom"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

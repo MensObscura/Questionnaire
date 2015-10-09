@@ -1,0 +1,114 @@
+@namespace(
+	uri="questionnaire",
+	prefix="questionnaire")
+@gmf
+package questionnaire;
+
+@gmf.diagram
+class Questionnaire extends ElementAvecNom {
+	
+	val Titre titre;
+	val Depart dep;
+	val Question[1..*] questions;
+	val Arrive arr;
+}
+
+class Titre extends ElementAvecNom{
+
+	
+}
+
+@gmf.node(label="nom",label.text="Départ",label.readOnly="true")
+class Depart extends Etape{
+
+	@gmf.link(target.decoration="arrow")
+	ref Etape firstEtape;
+	attr String nom;
+}
+
+@gmf.node(label="nom",label.text="Arrivée",label.readOnly="true")
+class Arrive extends Etape{
+	attr String nom;
+}
+
+
+class QuestionOuverte extends Question , ElementAvecNom{
+	@gmf.compartment
+	val ReponseText[1] reponse;
+}
+
+class QuestionFermee extends Question, ElementAvecNom{
+	@gmf.compartment
+ 	val ReponseOui[1] oui;
+ 	@gmf.compartment
+ 	val ReponseNon[1] non;
+
+	
+}
+
+class QuestionChoixMultiple extends Question, ElementAvecNom{
+
+	@gmf.compartment
+	val ReponseChoix[2..*] reponse;
+	
+}
+
+
+@gmf.node(label="nom",label.text="TextInput",label.readOnly="true")
+class ReponseText extends Reponse {
+
+	attr String nom;
+}
+
+
+@gmf.node(label="nom",label.text="Oui",label.readOnly="true")
+class ReponseOui extends ReponseRedirigable {
+		
+	attr String nom;
+	
+}
+
+@gmf.node(label="nom",label.text="Non",label.readOnly="true")
+class ReponseNon extends ReponseRedirigable {
+
+	attr String nom;
+	
+}
+
+class ReponseChoix extends ElementAvecNom , ReponseRedirigable {
+	
+}
+
+
+class Question extends Etape {
+	
+	@gmf.link(target.decoration="arrow")
+	ref Etape nextEtape;
+	
+}
+
+class Etape {
+	
+
+	
+}
+
+
+class Reponse {
+	
+
+	
+}
+
+class ReponseRedirigable extends Reponse {
+	@gmf.link(style="dash")
+	ref Question questionRedirect;
+
+	
+}
+
+@gmf.node(label="nom")
+class ElementAvecNom{
+	
+	attr String nom;
+}
