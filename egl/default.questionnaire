@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<questionnaire:Questionnaire xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:questionnaire="questionnaire">
+  <titre nom="Enquete pas très exclusive"/>
+  <dep firstEtape="//@questions.0" nom=""/>
+  <questions xsi:type="questionnaire:QuestionChoixMultiple" nextEtape="//@questions.1" nom="En tant que consomateur de marie joanne, pouvez-vous exprimez votre avis sur les dangers de celle-ci"/>
+  <questions xsi:type="questionnaire:QuestionFermee" nextEtape="//@questions.2" nom="Le chocolat vous fait-il plus plasire, qu'un trait de cook !">
+    <oui/>
+    <non/>
+  </questions>
+  <questions xsi:type="questionnaire:QuestionChoixMultiple" nextEtape="//@arr" nom="Si quelqu'un vous demande de l'aider à commencer à fumer vous :">
+    <reponse nom="L'envoyez sur les roses !"/>
+    <reponse nom="Vous lui expliquez que l'herbe finira par lui faire manger les pissenlits par la racine "/>
+    <reponse nom="Vous lui expliquez que son intellect et au ras des paquerettes" questionRedirect="//@questions.3"/>
+  </questions>
+  <questions xsi:type="questionnaire:QuestionFermee" nextEtape="//@arr" nom="Le quelqu'un en question ne comprend pas votre réponse, restez vous dans la botanique ?">
+    <oui/>
+    <non/>
+  </questions>
+  <arr/>
+</questionnaire:Questionnaire>
