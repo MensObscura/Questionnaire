@@ -24,6 +24,7 @@ class Depart extends Etape{
 	@gmf.link(target.decoration="arrow")
 	ref Etape firstEtape;
 	attr String nom;
+
 }
 
 @gmf.node(label="nom",label.text="Arrivée",label.readOnly="true")

@@ -17,7 +17,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Depart" eSuperTypes="#//Etape">
     <eAnnotations source="gmf.node">
       <details key="label" value="nom"/>
-      <details key="label.text" value="Départ"/>
+      <details key="label.text" value="DÃ©part"/>
       <details key="label.readOnly" value="true"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="firstEtape" eType="#//Etape">
@@ -30,7 +30,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Arrive" eSuperTypes="#//Etape">
     <eAnnotations source="gmf.node">
       <details key="label" value="nom"/>
-      <details key="label.text" value="Arrivée"/>
+      <details key="label.text" value="ArrivÃ©e"/>
       <details key="label.readOnly" value="true"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

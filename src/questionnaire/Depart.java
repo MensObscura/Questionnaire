@@ -17,7 +17,7 @@ package questionnaire;
  * </p>
  *
  * @see questionnaire.QuestionnairePackage#getDepart()
- * @model annotation="gmf.node label='nom' label.text='D\351part' label.readOnly='true'"
+ * @model annotation="gmf.node label='nom' label.text='D\303\251part' label.readOnly='true'"
  * @generated
  */
 public interface Depart extends Etape {

@@ -16,7 +16,7 @@ package questionnaire;
  * </p>
  *
  * @see questionnaire.QuestionnairePackage#getArrive()
- * @model annotation="gmf.node label='nom' label.text='Arriv\351e' label.readOnly='true'"
+ * @model annotation="gmf.node label='nom' label.text='Arriv\303\251e' label.readOnly='true'"
  * @generated
  */
 public interface Arrive extends Etape {

@@ -26,7 +26,7 @@
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="DepartLabelFigure" text="D&#xe9;part"/>
+        <children xsi:type="gmfgraph:Label" name="DepartLabelFigure" text="D&#xc3;&#xa9;part"/>
       </actualFigure>
       <accessors accessor="getFigureDepartLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
     </descriptors>
@@ -35,7 +35,7 @@
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="ArriveLabelFigure" text="Arriv&#xe9;e"/>
+        <children xsi:type="gmfgraph:Label" name="ArriveLabelFigure" text="Arriv&#xc3;&#xa9;e"/>
       </actualFigure>
       <accessors accessor="getFigureArriveLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
     </descriptors>

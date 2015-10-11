@@ -738,7 +738,7 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 		   source, 
 		   new String[] {
 			 "label", "nom",
-			 "label.text", "D\u00e9part",
+			 "label.text", "D\u00c3\u00a9part",
 			 "label.readOnly", "true"
 		   });	
 		addAnnotation
@@ -746,7 +746,7 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 		   source, 
 		   new String[] {
 			 "label", "nom",
-			 "label.text", "Arriv\u00e9e",
+			 "label.text", "Arriv\u00c3\u00a9e",
 			 "label.readOnly", "true"
 		   });	
 		addAnnotation
