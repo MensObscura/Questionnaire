@@ -1,10 +1,16 @@
 [% 
 
+for (titre in Titre.all) {
+var t : Template = TemplateFactory.load("generateHeader.egl");
+	t.populate("titre",titre);
+	t.generate("gen/head/header.html");
+} 
+
 for (e in Etape.all) {
 	var t : Template = TemplateFactory.load("generateContents.egl");
 	t.populate("etape",e);
 	t.generate("gen/"+e.nom+".html");
-} 
+}
 
 
 

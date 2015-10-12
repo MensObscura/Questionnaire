@@ -24,7 +24,7 @@ import questionnaire.QuestionnairePackage;
  *
  * @generated
  */
-public class ArriveImpl extends EtapeImpl implements Arrive {
+public class ArriveImpl extends FollowingEtapeImpl implements Arrive {
 	/**
 	 * The default value of the '{@link #getNom() <em>Nom</em>}' attribute.
 	 * <!-- begin-user-doc -->

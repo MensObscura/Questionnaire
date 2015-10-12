@@ -69,6 +69,8 @@ public class QuestionnaireFactoryImpl extends EFactoryImpl implements Questionna
 			case QuestionnairePackage.REPONSE_CHOIX: return createReponseChoix();
 			case QuestionnairePackage.QUESTION: return createQuestion();
 			case QuestionnairePackage.ETAPE: return createEtape();
+			case QuestionnairePackage.FIRST_ETAPE: return createFirstEtape();
+			case QuestionnairePackage.FOLLOWING_ETAPE: return createFollowingEtape();
 			case QuestionnairePackage.REPONSE: return createReponse();
 			case QuestionnairePackage.REPONSE_REDIRIGABLE: return createReponseRedirigable();
 			case QuestionnairePackage.ELEMENT_AVEC_NOM: return createElementAvecNom();
@@ -205,6 +207,26 @@ public class QuestionnaireFactoryImpl extends EFactoryImpl implements Questionna
 	public Etape createEtape() {
 		EtapeImpl etape = new EtapeImpl();
 		return etape;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FirstEtape createFirstEtape() {
+		FirstEtapeImpl firstEtape = new FirstEtapeImpl();
+		return firstEtape;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FollowingEtape createFollowingEtape() {
+		FollowingEtapeImpl followingEtape = new FollowingEtapeImpl();
+		return followingEtape;
 	}
 
 	/**

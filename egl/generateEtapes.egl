@@ -6,7 +6,7 @@
 [% 
   
   operation Depart generateBoutonSuivant() : String {
-  	return "<button onclick=\"sessionStorage.clear();window.location.href='"+self.firstEtape.nom+".html'\">Commencer</button>";
+  	return "<p>"+self.text+"</p><br><button onclick=\"sessionStorage.clear();window.location.href='"+self.firstEtape.nom+".html'\">Commencer</button>";
   }
   
   operation Arrive generateBoutonSuivant() : String {
@@ -20,7 +20,11 @@
   	
   	for (page in Question.all) {
   		script = script + "d = document.getElementById('"+page.nom+"');\n";
-		script = script + "d.innerHTML = sessionStorage.getItem('"+page.nom+"');\n";
+  		script = script + " var test = sessionStorage.getItem('"+page.nom+"');\n";
+  		script = script +" if(test == '' || test == null){\n";
+  		script = script +" test = \"Question non rencontree\";\n";
+  		script = script +"}\n";
+		script = script + "d.innerHTML = test;\n";
 	}
   
   	script = script + "</script>\n";

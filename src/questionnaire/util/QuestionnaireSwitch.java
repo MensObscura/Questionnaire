@@ -83,6 +83,7 @@ public class QuestionnaireSwitch<T> extends Switch<T> {
 			case QuestionnairePackage.DEPART: {
 				Depart depart = (Depart)theEObject;
 				T result = caseDepart(depart);
+				if (result == null) result = caseFirstEtape(depart);
 				if (result == null) result = caseEtape(depart);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -90,6 +91,7 @@ public class QuestionnaireSwitch<T> extends Switch<T> {
 			case QuestionnairePackage.ARRIVE: {
 				Arrive arrive = (Arrive)theEObject;
 				T result = caseArrive(arrive);
+				if (result == null) result = caseFollowingEtape(arrive);
 				if (result == null) result = caseEtape(arrive);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -99,6 +101,7 @@ public class QuestionnaireSwitch<T> extends Switch<T> {
 				T result = caseQuestionOuverte(questionOuverte);
 				if (result == null) result = caseQuestion(questionOuverte);
 				if (result == null) result = caseElementAvecNom(questionOuverte);
+				if (result == null) result = caseFollowingEtape(questionOuverte);
 				if (result == null) result = caseEtape(questionOuverte);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -108,6 +111,7 @@ public class QuestionnaireSwitch<T> extends Switch<T> {
 				T result = caseQuestionFermee(questionFermee);
 				if (result == null) result = caseQuestion(questionFermee);
 				if (result == null) result = caseElementAvecNom(questionFermee);
+				if (result == null) result = caseFollowingEtape(questionFermee);
 				if (result == null) result = caseEtape(questionFermee);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -117,6 +121,7 @@ public class QuestionnaireSwitch<T> extends Switch<T> {
 				T result = caseQuestionChoixMultiple(questionChoixMultiple);
 				if (result == null) result = caseQuestion(questionChoixMultiple);
 				if (result == null) result = caseElementAvecNom(questionChoixMultiple);
+				if (result == null) result = caseFollowingEtape(questionChoixMultiple);
 				if (result == null) result = caseEtape(questionChoixMultiple);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -156,6 +161,7 @@ public class QuestionnaireSwitch<T> extends Switch<T> {
 			case QuestionnairePackage.QUESTION: {
 				Question question = (Question)theEObject;
 				T result = caseQuestion(question);
+				if (result == null) result = caseFollowingEtape(question);
 				if (result == null) result = caseEtape(question);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -163,6 +169,20 @@ public class QuestionnaireSwitch<T> extends Switch<T> {
 			case QuestionnairePackage.ETAPE: {
 				Etape etape = (Etape)theEObject;
 				T result = caseEtape(etape);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case QuestionnairePackage.FIRST_ETAPE: {
+				FirstEtape firstEtape = (FirstEtape)theEObject;
+				T result = caseFirstEtape(firstEtape);
+				if (result == null) result = caseEtape(firstEtape);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case QuestionnairePackage.FOLLOWING_ETAPE: {
+				FollowingEtape followingEtape = (FollowingEtape)theEObject;
+				T result = caseFollowingEtape(followingEtape);
+				if (result == null) result = caseEtape(followingEtape);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -381,6 +401,36 @@ public class QuestionnaireSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEtape(Etape object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>First Etape</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>First Etape</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFirstEtape(FirstEtape object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Following Etape</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Following Etape</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFollowingEtape(FollowingEtape object) {
 		return null;
 	}
 

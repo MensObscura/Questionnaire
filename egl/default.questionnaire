@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <questionnaire:Questionnaire xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:questionnaire="questionnaire">
-  <dep firstEtape="//@questions.0"/>
-  <questions xsi:type="questionnaire:QuestionChoixMultiple" nextEtape="//@questions.1" intitule="Salle est ?" nom="Question1">
+  <titre nom="Enquete sallace !"/>
+  <dep text="Ceci est le test qui tue !" firstEtape="//@questions.0"/>
+  <questions xsi:type="questionnaire:QuestionChoixMultiple" nextEtape="//@questions.1" intitule="Salla est ?" nom="Question1">
     <reponses nom="Salla est le plus beau"/>
     <reponses nom="Salla est le plus grand"/>
     <reponses nom="Salla et plus sage" questionRedirect="//@questions.3"/>
@@ -10,10 +11,22 @@
     <oui/>
     <non/>
   </questions>
-  <questions xsi:type="questionnaire:QuestionOuverte" nextEtape="//@arr" intitule="Decrivez salla en quelques mots :" nom="Question3">
+  <questions xsi:type="questionnaire:QuestionOuverte" nextEtape="//@questions.4" intitule="Decrivez salla en quelques mots :" nom="Question3">
     <reponse/>
   </questions>
   <questions xsi:type="questionnaire:QuestionOuverte" nextEtape="//@questions.1" intitule="Pourquoi le plus sage ?" nom="Question1.2">
+    <reponse/>
+  </questions>
+  <questions xsi:type="questionnaire:QuestionChoixMultiple" nextEtape="//@questions.6" intitule="Qui est julie ?" nom="question4">
+    <reponses nom="Une fille " questionRedirect="//@questions.5"/>
+    <reponses nom="Une super voisine "/>
+    <reponses nom="Surtout pas justine"/>
+  </questions>
+  <questions xsi:type="questionnaire:QuestionFermee" nextEtape="//@questions.6" intitule="Est-tu sur ?" nom="question4.1">
+    <oui/>
+    <non/>
+  </questions>
+  <questions xsi:type="questionnaire:QuestionOuverte" nextEtape="//@arr" intitule="Decrit là en quelques mots !" nom="question5">
     <reponse/>
   </questions>
   <arr/>

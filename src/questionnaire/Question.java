@@ -20,7 +20,7 @@ package questionnaire;
  * @model annotation="gmf.node label='intitule'"
  * @generated
  */
-public interface Question extends Etape {
+public interface Question extends FollowingEtape {
 	/**
 	 * Returns the value of the '<em><b>Next Etape</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -30,12 +30,12 @@ public interface Question extends Etape {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Next Etape</em>' reference.
-	 * @see #setNextEtape(Etape)
+	 * @see #setNextEtape(FollowingEtape)
 	 * @see questionnaire.QuestionnairePackage#getQuestion_NextEtape()
 	 * @model annotation="gmf.link target.decoration='arrow'"
 	 * @generated
 	 */
-	Etape getNextEtape();
+	FollowingEtape getNextEtape();
 
 	/**
 	 * Sets the value of the '{@link questionnaire.Question#getNextEtape <em>Next Etape</em>}' reference.
@@ -45,7 +45,7 @@ public interface Question extends Etape {
 	 * @see #getNextEtape()
 	 * @generated
 	 */
-	void setNextEtape(Etape value);
+	void setNextEtape(FollowingEtape value);
 
 	/**
 	 * Returns the value of the '<em><b>Intitule</b></em>' attribute.

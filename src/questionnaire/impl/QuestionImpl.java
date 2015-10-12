@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import questionnaire.Etape;
+import questionnaire.FollowingEtape;
 import questionnaire.Question;
 import questionnaire.QuestionnairePackage;
 
@@ -27,7 +28,7 @@ import questionnaire.QuestionnairePackage;
  *
  * @generated
  */
-public class QuestionImpl extends EtapeImpl implements Question {
+public class QuestionImpl extends FollowingEtapeImpl implements Question {
 	/**
 	 * The cached value of the '{@link #getNextEtape() <em>Next Etape</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -36,7 +37,7 @@ public class QuestionImpl extends EtapeImpl implements Question {
 	 * @generated
 	 * @ordered
 	 */
-	protected Etape nextEtape;
+	protected FollowingEtape nextEtape;
 
 	/**
 	 * The default value of the '{@link #getIntitule() <em>Intitule</em>}' attribute.
@@ -82,10 +83,10 @@ public class QuestionImpl extends EtapeImpl implements Question {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Etape getNextEtape() {
+	public FollowingEtape getNextEtape() {
 		if (nextEtape != null && nextEtape.eIsProxy()) {
 			InternalEObject oldNextEtape = (InternalEObject)nextEtape;
-			nextEtape = (Etape)eResolveProxy(oldNextEtape);
+			nextEtape = (FollowingEtape)eResolveProxy(oldNextEtape);
 			if (nextEtape != oldNextEtape) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuestionnairePackage.QUESTION__NEXT_ETAPE, oldNextEtape, nextEtape));
@@ -99,7 +100,7 @@ public class QuestionImpl extends EtapeImpl implements Question {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Etape basicGetNextEtape() {
+	public FollowingEtape basicGetNextEtape() {
 		return nextEtape;
 	}
 
@@ -108,8 +109,8 @@ public class QuestionImpl extends EtapeImpl implements Question {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNextEtape(Etape newNextEtape) {
-		Etape oldNextEtape = nextEtape;
+	public void setNextEtape(FollowingEtape newNextEtape) {
+		FollowingEtape oldNextEtape = nextEtape;
 		nextEtape = newNextEtape;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.QUESTION__NEXT_ETAPE, oldNextEtape, nextEtape));
@@ -162,7 +163,7 @@ public class QuestionImpl extends EtapeImpl implements Question {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case QuestionnairePackage.QUESTION__NEXT_ETAPE:
-				setNextEtape((Etape)newValue);
+				setNextEtape((FollowingEtape)newValue);
 				return;
 			case QuestionnairePackage.QUESTION__INTITULE:
 				setIntitule((String)newValue);
@@ -180,7 +181,7 @@ public class QuestionImpl extends EtapeImpl implements Question {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case QuestionnairePackage.QUESTION__NEXT_ETAPE:
-				setNextEtape((Etape)null);
+				setNextEtape((FollowingEtape)null);
 				return;
 			case QuestionnairePackage.QUESTION__INTITULE:
 				setIntitule(INTITULE_EDEFAULT);

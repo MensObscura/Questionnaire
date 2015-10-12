@@ -120,6 +120,14 @@ public class QuestionnaireAdapterFactory extends AdapterFactoryImpl {
 				return createEtapeAdapter();
 			}
 			@Override
+			public Adapter caseFirstEtape(FirstEtape object) {
+				return createFirstEtapeAdapter();
+			}
+			@Override
+			public Adapter caseFollowingEtape(FollowingEtape object) {
+				return createFollowingEtapeAdapter();
+			}
+			@Override
 			public Adapter caseReponse(Reponse object) {
 				return createReponseAdapter();
 			}
@@ -330,6 +338,34 @@ public class QuestionnaireAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEtapeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link questionnaire.FirstEtape <em>First Etape</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see questionnaire.FirstEtape
+	 * @generated
+	 */
+	public Adapter createFirstEtapeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link questionnaire.FollowingEtape <em>Following Etape</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see questionnaire.FollowingEtape
+	 * @generated
+	 */
+	public Adapter createFollowingEtapeAdapter() {
 		return null;
 	}
 

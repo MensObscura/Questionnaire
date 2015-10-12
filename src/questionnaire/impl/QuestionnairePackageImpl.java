@@ -13,6 +13,8 @@ import questionnaire.Arrive;
 import questionnaire.Depart;
 import questionnaire.ElementAvecNom;
 import questionnaire.Etape;
+import questionnaire.FirstEtape;
+import questionnaire.FollowingEtape;
 import questionnaire.Question;
 import questionnaire.QuestionChoixMultiple;
 import questionnaire.QuestionFermee;
@@ -125,6 +127,20 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 	 * @generated
 	 */
 	private EClass etapeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass firstEtapeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass followingEtapeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -285,8 +301,17 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDepart_Text() {
+		return (EAttribute)departEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getDepart_FirstEtape() {
-		return (EReference)departEClass.getEStructuralFeatures().get(1);
+		return (EReference)departEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -474,6 +499,24 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getFirstEtape() {
+		return firstEtapeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFollowingEtape() {
+		return followingEtapeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getReponse() {
 		return reponseEClass;
 	}
@@ -552,6 +595,7 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 
 		departEClass = createEClass(DEPART);
 		createEAttribute(departEClass, DEPART__NOM);
+		createEAttribute(departEClass, DEPART__TEXT);
 		createEReference(departEClass, DEPART__FIRST_ETAPE);
 
 		arriveEClass = createEClass(ARRIVE);
@@ -583,6 +627,10 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 		createEAttribute(questionEClass, QUESTION__INTITULE);
 
 		etapeEClass = createEClass(ETAPE);
+
+		firstEtapeEClass = createEClass(FIRST_ETAPE);
+
+		followingEtapeEClass = createEClass(FOLLOWING_ETAPE);
 
 		reponseEClass = createEClass(REPONSE);
 
@@ -623,8 +671,8 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 		// Add supertypes to classes
 		questionnaireEClass.getESuperTypes().add(this.getElementAvecNom());
 		titreEClass.getESuperTypes().add(this.getElementAvecNom());
-		departEClass.getESuperTypes().add(this.getEtape());
-		arriveEClass.getESuperTypes().add(this.getEtape());
+		departEClass.getESuperTypes().add(this.getFirstEtape());
+		arriveEClass.getESuperTypes().add(this.getFollowingEtape());
 		questionOuverteEClass.getESuperTypes().add(this.getQuestion());
 		questionOuverteEClass.getESuperTypes().add(this.getElementAvecNom());
 		questionFermeeEClass.getESuperTypes().add(this.getQuestion());
@@ -636,7 +684,9 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 		reponseNonEClass.getESuperTypes().add(this.getReponseRedirigable());
 		reponseChoixEClass.getESuperTypes().add(this.getElementAvecNom());
 		reponseChoixEClass.getESuperTypes().add(this.getReponseRedirigable());
-		questionEClass.getESuperTypes().add(this.getEtape());
+		questionEClass.getESuperTypes().add(this.getFollowingEtape());
+		firstEtapeEClass.getESuperTypes().add(this.getEtape());
+		followingEtapeEClass.getESuperTypes().add(this.getEtape());
 		reponseRedirigableEClass.getESuperTypes().add(this.getReponse());
 
 		// Initialize classes and features; add operations and parameters
@@ -650,6 +700,7 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 
 		initEClass(departEClass, Depart.class, "Depart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDepart_Nom(), ecorePackage.getEString(), "nom", "Depart", 0, 1, Depart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDepart_Text(), ecorePackage.getEString(), "text", null, 0, 1, Depart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDepart_FirstEtape(), this.getEtape(), null, "firstEtape", null, 0, 1, Depart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(arriveEClass, Arrive.class, "Arrive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -677,10 +728,14 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 		initEClass(reponseChoixEClass, ReponseChoix.class, "ReponseChoix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(questionEClass, Question.class, "Question", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getQuestion_NextEtape(), this.getEtape(), null, "nextEtape", null, 0, 1, Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQuestion_NextEtape(), this.getFollowingEtape(), null, "nextEtape", null, 0, 1, Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getQuestion_Intitule(), ecorePackage.getEString(), "intitule", null, 0, 1, Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(etapeEClass, Etape.class, "Etape", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(firstEtapeEClass, FirstEtape.class, "FirstEtape", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(followingEtapeEClass, FollowingEtape.class, "FollowingEtape", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(reponseEClass, Reponse.class, "Reponse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

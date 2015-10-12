@@ -178,26 +178,6 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="metaQuestionnaire.ecore#//Questionnaire/titre"/>
-    <ownedChild>
-      <domainMetaElement
-          href="metaQuestionnaire.ecore#//Titre"/>
-      <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping">
-        <diagramLabel
-            href="metaQuestionnaire.gmfgraph#TitreLabel"/>
-        <features
-            href="metaQuestionnaire.ecore#//ElementAvecNom/nom"/>
-      </labelMappings>
-      <tool
-          xsi:type="gmftool:CreationTool"
-          href="metaQuestionnaire.gmftool#//@palette/@tools.0/@tools.12"/>
-      <diagramNode
-          href="metaQuestionnaire.gmfgraph#Titre"/>
-    </ownedChild>
-  </nodes>
-  <nodes>
-    <containmentFeature
         href="metaQuestionnaire.ecore#//Questionnaire/dep"/>
     <ownedChild>
       <domainMetaElement
@@ -256,6 +236,26 @@
           href="metaQuestionnaire.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
           href="metaQuestionnaire.gmfgraph#Arrive"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="metaQuestionnaire.ecore#//Questionnaire/titre"/>
+    <ownedChild>
+      <domainMetaElement
+          href="metaQuestionnaire.ecore#//Titre"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="metaQuestionnaire.gmfgraph#TitreLabel"/>
+        <features
+            href="metaQuestionnaire.ecore#//ElementAvecNom/nom"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="metaQuestionnaire.gmftool#//@palette/@tools.0/@tools.12"/>
+      <diagramNode
+          href="metaQuestionnaire.gmfgraph#Titre"/>
     </ownedChild>
   </nodes>
   <links>

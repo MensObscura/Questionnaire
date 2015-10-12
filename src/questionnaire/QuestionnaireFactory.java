@@ -139,6 +139,24 @@ public interface QuestionnaireFactory extends EFactory {
 	Etape createEtape();
 
 	/**
+	 * Returns a new object of class '<em>First Etape</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>First Etape</em>'.
+	 * @generated
+	 */
+	FirstEtape createFirstEtape();
+
+	/**
+	 * Returns a new object of class '<em>Following Etape</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Following Etape</em>'.
+	 * @generated
+	 */
+	FollowingEtape createFollowingEtape();
+
+	/**
 	 * Returns a new object of class '<em>Reponse</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

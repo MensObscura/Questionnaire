@@ -63,7 +63,7 @@ public interface QuestionnairePackage extends EPackage {
 	 * @see questionnaire.impl.QuestionnairePackageImpl#getElementAvecNom()
 	 * @generated
 	 */
-	int ELEMENT_AVEC_NOM = 15;
+	int ELEMENT_AVEC_NOM = 17;
 
 	/**
 	 * The feature id for the '<em><b>Nom</b></em>' attribute.
@@ -195,6 +195,25 @@ public interface QuestionnairePackage extends EPackage {
 	int ETAPE_FEATURE_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link questionnaire.impl.FirstEtapeImpl <em>First Etape</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see questionnaire.impl.FirstEtapeImpl
+	 * @see questionnaire.impl.QuestionnairePackageImpl#getFirstEtape()
+	 * @generated
+	 */
+	int FIRST_ETAPE = 13;
+
+	/**
+	 * The number of structural features of the '<em>First Etape</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIRST_ETAPE_FEATURE_COUNT = ETAPE_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link questionnaire.impl.DepartImpl <em>Depart</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -211,7 +230,16 @@ public interface QuestionnairePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPART__NOM = ETAPE_FEATURE_COUNT + 0;
+	int DEPART__NOM = FIRST_ETAPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPART__TEXT = FIRST_ETAPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>First Etape</b></em>' reference.
@@ -220,7 +248,7 @@ public interface QuestionnairePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPART__FIRST_ETAPE = ETAPE_FEATURE_COUNT + 1;
+	int DEPART__FIRST_ETAPE = FIRST_ETAPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Depart</em>' class.
@@ -229,7 +257,26 @@ public interface QuestionnairePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPART_FEATURE_COUNT = ETAPE_FEATURE_COUNT + 2;
+	int DEPART_FEATURE_COUNT = FIRST_ETAPE_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link questionnaire.impl.FollowingEtapeImpl <em>Following Etape</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see questionnaire.impl.FollowingEtapeImpl
+	 * @see questionnaire.impl.QuestionnairePackageImpl#getFollowingEtape()
+	 * @generated
+	 */
+	int FOLLOWING_ETAPE = 14;
+
+	/**
+	 * The number of structural features of the '<em>Following Etape</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOLLOWING_ETAPE_FEATURE_COUNT = ETAPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link questionnaire.impl.ArriveImpl <em>Arrive</em>}' class.
@@ -248,7 +295,7 @@ public interface QuestionnairePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRIVE__NOM = ETAPE_FEATURE_COUNT + 0;
+	int ARRIVE__NOM = FOLLOWING_ETAPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Arrive</em>' class.
@@ -257,7 +304,7 @@ public interface QuestionnairePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRIVE_FEATURE_COUNT = ETAPE_FEATURE_COUNT + 1;
+	int ARRIVE_FEATURE_COUNT = FOLLOWING_ETAPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link questionnaire.impl.QuestionImpl <em>Question</em>}' class.
@@ -276,7 +323,7 @@ public interface QuestionnairePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUESTION__NEXT_ETAPE = ETAPE_FEATURE_COUNT + 0;
+	int QUESTION__NEXT_ETAPE = FOLLOWING_ETAPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Intitule</b></em>' attribute.
@@ -285,7 +332,7 @@ public interface QuestionnairePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUESTION__INTITULE = ETAPE_FEATURE_COUNT + 1;
+	int QUESTION__INTITULE = FOLLOWING_ETAPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Question</em>' class.
@@ -294,7 +341,7 @@ public interface QuestionnairePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUESTION_FEATURE_COUNT = ETAPE_FEATURE_COUNT + 2;
+	int QUESTION_FEATURE_COUNT = FOLLOWING_ETAPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link questionnaire.impl.QuestionOuverteImpl <em>Question Ouverte</em>}' class.
@@ -478,7 +525,7 @@ public interface QuestionnairePackage extends EPackage {
 	 * @see questionnaire.impl.QuestionnairePackageImpl#getReponse()
 	 * @generated
 	 */
-	int REPONSE = 13;
+	int REPONSE = 15;
 
 	/**
 	 * The number of structural features of the '<em>Reponse</em>' class.
@@ -525,7 +572,7 @@ public interface QuestionnairePackage extends EPackage {
 	 * @see questionnaire.impl.QuestionnairePackageImpl#getReponseRedirigable()
 	 * @generated
 	 */
-	int REPONSE_REDIRIGABLE = 14;
+	int REPONSE_REDIRIGABLE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Question Redirect</b></em>' reference.
@@ -741,6 +788,17 @@ public interface QuestionnairePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDepart_Nom();
+
+	/**
+	 * Returns the meta object for the attribute '{@link questionnaire.Depart#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Text</em>'.
+	 * @see questionnaire.Depart#getText()
+	 * @see #getDepart()
+	 * @generated
+	 */
+	EAttribute getDepart_Text();
 
 	/**
 	 * Returns the meta object for the reference '{@link questionnaire.Depart#getFirstEtape <em>First Etape</em>}'.
@@ -964,6 +1022,26 @@ public interface QuestionnairePackage extends EPackage {
 	EClass getEtape();
 
 	/**
+	 * Returns the meta object for class '{@link questionnaire.FirstEtape <em>First Etape</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>First Etape</em>'.
+	 * @see questionnaire.FirstEtape
+	 * @generated
+	 */
+	EClass getFirstEtape();
+
+	/**
+	 * Returns the meta object for class '{@link questionnaire.FollowingEtape <em>Following Etape</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Following Etape</em>'.
+	 * @see questionnaire.FollowingEtape
+	 * @generated
+	 */
+	EClass getFollowingEtape();
+
+	/**
 	 * Returns the meta object for class '{@link questionnaire.Reponse <em>Reponse</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1106,6 +1184,14 @@ public interface QuestionnairePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DEPART__NOM = eINSTANCE.getDepart_Nom();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DEPART__TEXT = eINSTANCE.getDepart_Text();
 
 		/**
 		 * The meta object literal for the '<em><b>First Etape</b></em>' reference feature.
@@ -1294,6 +1380,26 @@ public interface QuestionnairePackage extends EPackage {
 		 * @generated
 		 */
 		EClass ETAPE = eINSTANCE.getEtape();
+
+		/**
+		 * The meta object literal for the '{@link questionnaire.impl.FirstEtapeImpl <em>First Etape</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see questionnaire.impl.FirstEtapeImpl
+		 * @see questionnaire.impl.QuestionnairePackageImpl#getFirstEtape()
+		 * @generated
+		 */
+		EClass FIRST_ETAPE = eINSTANCE.getFirstEtape();
+
+		/**
+		 * The meta object literal for the '{@link questionnaire.impl.FollowingEtapeImpl <em>Following Etape</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see questionnaire.impl.FollowingEtapeImpl
+		 * @see questionnaire.impl.QuestionnairePackageImpl#getFollowingEtape()
+		 * @generated
+		 */
+		EClass FOLLOWING_ETAPE = eINSTANCE.getFollowingEtape();
 
 		/**
 		 * The meta object literal for the '{@link questionnaire.impl.ReponseImpl <em>Reponse</em>}' class.

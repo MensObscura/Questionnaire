@@ -14,7 +14,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Titre" eSuperTypes="#//ElementAvecNom"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Depart" eSuperTypes="#//Etape">
+  <eClassifiers xsi:type="ecore:EClass" name="Depart" eSuperTypes="#//FirstEtape">
     <eAnnotations source="gmf.node">
       <details key="label" value="nom"/>
       <details key="label.text" value="Depart"/>
@@ -22,13 +22,14 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="Depart"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="firstEtape" eType="#//Etape">
       <eAnnotations source="gmf.link">
         <details key="target.decoration" value="arrow"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Arrive" eSuperTypes="#//Etape">
+  <eClassifiers xsi:type="ecore:EClass" name="Arrive" eSuperTypes="#//FollowingEtape">
     <eAnnotations source="gmf.node">
       <details key="label" value="nom"/>
       <details key="label.text" value="Arrivee"/>
@@ -86,11 +87,11 @@
         defaultValueLiteral="non"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReponseChoix" eSuperTypes="#//ElementAvecNom #//ReponseRedirigable"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Question" eSuperTypes="#//Etape">
+  <eClassifiers xsi:type="ecore:EClass" name="Question" eSuperTypes="#//FollowingEtape">
     <eAnnotations source="gmf.node">
       <details key="label" value="intitule"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nextEtape" eType="#//Etape">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nextEtape" eType="#//FollowingEtape">
       <eAnnotations source="gmf.link">
         <details key="target.decoration" value="arrow"/>
       </eAnnotations>
@@ -98,6 +99,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="intitule" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Etape"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FirstEtape" eSuperTypes="#//Etape"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FollowingEtape" eSuperTypes="#//Etape"/>
   <eClassifiers xsi:type="ecore:EClass" name="Reponse"/>
   <eClassifiers xsi:type="ecore:EClass" name="ReponseRedirigable" eSuperTypes="#//Reponse">
     <eStructuralFeatures xsi:type="ecore:EReference" name="questionRedirect" eType="#//Question">

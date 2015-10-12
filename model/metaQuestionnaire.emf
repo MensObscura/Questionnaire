@@ -19,9 +19,10 @@ class Titre extends ElementAvecNom{
 }
 
 @gmf.node(label="nom",label.text="Depart",label.readOnly="true")
-class Depart extends Etape{
+class Depart extends FirstEtape{
 
 	attr String nom ="Depart";
+	attr String text;
 	@gmf.link(target.decoration="arrow")
 	ref Etape firstEtape;
 	
@@ -29,7 +30,7 @@ class Depart extends Etape{
 }
 
 @gmf.node(label="nom",label.text="Arrivee",label.readOnly="true")
-class Arrive extends Etape{
+class Arrive extends FollowingEtape{
 	attr String nom = "Arrivee";
 }
 
@@ -82,10 +83,10 @@ class ReponseChoix extends ElementAvecNom , ReponseRedirigable {
 }
 
 @gmf.node(label="intitule")
-class Question extends Etape {
+class Question extends FollowingEtape {
 	
 	@gmf.link(target.decoration="arrow")
-	ref Etape nextEtape;
+	ref FollowingEtape nextEtape;
 	attr String intitule;
 	
 }
@@ -96,6 +97,17 @@ class Etape {
 	
 }
 
+class FirstEtape extends Etape{
+	
+
+	
+}
+
+class FollowingEtape extends Etape{
+	
+
+	
+}
 
 class Reponse {
 	

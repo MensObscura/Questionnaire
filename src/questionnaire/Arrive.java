@@ -19,7 +19,7 @@ package questionnaire;
  * @model annotation="gmf.node label='nom' label.text='Arrivee' label.readOnly='true'"
  * @generated
  */
-public interface Arrive extends Etape {
+public interface Arrive extends FollowingEtape {
 	/**
 	 * Returns the value of the '<em><b>Nom</b></em>' attribute.
 	 * The default value is <code>"Arrivee"</code>.

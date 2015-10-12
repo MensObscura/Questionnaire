@@ -21,13 +21,14 @@ import questionnaire.QuestionnairePackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link questionnaire.impl.DepartImpl#getNom <em>Nom</em>}</li>
+ *   <li>{@link questionnaire.impl.DepartImpl#getText <em>Text</em>}</li>
  *   <li>{@link questionnaire.impl.DepartImpl#getFirstEtape <em>First Etape</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class DepartImpl extends EtapeImpl implements Depart {
+public class DepartImpl extends FirstEtapeImpl implements Depart {
 	/**
 	 * The default value of the '{@link #getNom() <em>Nom</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -47,6 +48,26 @@ public class DepartImpl extends EtapeImpl implements Depart {
 	 * @ordered
 	 */
 	protected String nom = NOM_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getText()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TEXT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getText()
+	 * @generated
+	 * @ordered
+	 */
+	protected String text = TEXT_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getFirstEtape() <em>First Etape</em>}' reference.
@@ -103,6 +124,27 @@ public class DepartImpl extends EtapeImpl implements Depart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getText() {
+		return text;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setText(String newText) {
+		String oldText = text;
+		text = newText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.DEPART__TEXT, oldText, text));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Etape getFirstEtape() {
 		if (firstEtape != null && firstEtape.eIsProxy()) {
 			InternalEObject oldFirstEtape = (InternalEObject)firstEtape;
@@ -146,6 +188,8 @@ public class DepartImpl extends EtapeImpl implements Depart {
 		switch (featureID) {
 			case QuestionnairePackage.DEPART__NOM:
 				return getNom();
+			case QuestionnairePackage.DEPART__TEXT:
+				return getText();
 			case QuestionnairePackage.DEPART__FIRST_ETAPE:
 				if (resolve) return getFirstEtape();
 				return basicGetFirstEtape();
@@ -163,6 +207,9 @@ public class DepartImpl extends EtapeImpl implements Depart {
 		switch (featureID) {
 			case QuestionnairePackage.DEPART__NOM:
 				setNom((String)newValue);
+				return;
+			case QuestionnairePackage.DEPART__TEXT:
+				setText((String)newValue);
 				return;
 			case QuestionnairePackage.DEPART__FIRST_ETAPE:
 				setFirstEtape((Etape)newValue);
@@ -182,6 +229,9 @@ public class DepartImpl extends EtapeImpl implements Depart {
 			case QuestionnairePackage.DEPART__NOM:
 				setNom(NOM_EDEFAULT);
 				return;
+			case QuestionnairePackage.DEPART__TEXT:
+				setText(TEXT_EDEFAULT);
+				return;
 			case QuestionnairePackage.DEPART__FIRST_ETAPE:
 				setFirstEtape((Etape)null);
 				return;
@@ -199,6 +249,8 @@ public class DepartImpl extends EtapeImpl implements Depart {
 		switch (featureID) {
 			case QuestionnairePackage.DEPART__NOM:
 				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
+			case QuestionnairePackage.DEPART__TEXT:
+				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 			case QuestionnairePackage.DEPART__FIRST_ETAPE:
 				return firstEtape != null;
 		}
@@ -217,6 +269,8 @@ public class DepartImpl extends EtapeImpl implements Depart {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nom: ");
 		result.append(nom);
+		result.append(", text: ");
+		result.append(text);
 		result.append(')');
 		return result.toString();
 	}
