@@ -1,0 +1,8 @@
+src/*
+META-INF/*
+bin/
+*.java
+*.class
+.*
+build.*
+plugin.*
