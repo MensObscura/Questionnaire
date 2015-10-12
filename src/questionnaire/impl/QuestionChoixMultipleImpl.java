@@ -30,7 +30,7 @@ import questionnaire.ReponseChoix;
  * The following features are implemented:
  * <ul>
  *   <li>{@link questionnaire.impl.QuestionChoixMultipleImpl#getNom <em>Nom</em>}</li>
- *   <li>{@link questionnaire.impl.QuestionChoixMultipleImpl#getReponse <em>Reponse</em>}</li>
+ *   <li>{@link questionnaire.impl.QuestionChoixMultipleImpl#getReponses <em>Reponses</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,14 +58,14 @@ public class QuestionChoixMultipleImpl extends QuestionImpl implements QuestionC
 	protected String nom = NOM_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getReponse() <em>Reponse</em>}' containment reference list.
+	 * The cached value of the '{@link #getReponses() <em>Reponses</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReponse()
+	 * @see #getReponses()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ReponseChoix> reponse;
+	protected EList<ReponseChoix> reponses;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,11 +112,11 @@ public class QuestionChoixMultipleImpl extends QuestionImpl implements QuestionC
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ReponseChoix> getReponse() {
-		if (reponse == null) {
-			reponse = new EObjectContainmentEList<ReponseChoix>(ReponseChoix.class, this, QuestionnairePackage.QUESTION_CHOIX_MULTIPLE__REPONSE);
+	public EList<ReponseChoix> getReponses() {
+		if (reponses == null) {
+			reponses = new EObjectContainmentEList<ReponseChoix>(ReponseChoix.class, this, QuestionnairePackage.QUESTION_CHOIX_MULTIPLE__REPONSES);
 		}
-		return reponse;
+		return reponses;
 	}
 
 	/**
@@ -127,8 +127,8 @@ public class QuestionChoixMultipleImpl extends QuestionImpl implements QuestionC
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case QuestionnairePackage.QUESTION_CHOIX_MULTIPLE__REPONSE:
-				return ((InternalEList<?>)getReponse()).basicRemove(otherEnd, msgs);
+			case QuestionnairePackage.QUESTION_CHOIX_MULTIPLE__REPONSES:
+				return ((InternalEList<?>)getReponses()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -143,8 +143,8 @@ public class QuestionChoixMultipleImpl extends QuestionImpl implements QuestionC
 		switch (featureID) {
 			case QuestionnairePackage.QUESTION_CHOIX_MULTIPLE__NOM:
 				return getNom();
-			case QuestionnairePackage.QUESTION_CHOIX_MULTIPLE__REPONSE:
-				return getReponse();
+			case QuestionnairePackage.QUESTION_CHOIX_MULTIPLE__REPONSES:
+				return getReponses();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -161,9 +161,9 @@ public class QuestionChoixMultipleImpl extends QuestionImpl implements QuestionC
 			case QuestionnairePackage.QUESTION_CHOIX_MULTIPLE__NOM:
 				setNom((String)newValue);
 				return;
-			case QuestionnairePackage.QUESTION_CHOIX_MULTIPLE__REPONSE:
-				getReponse().clear();
-				getReponse().addAll((Collection<? extends ReponseChoix>)newValue);
+			case QuestionnairePackage.QUESTION_CHOIX_MULTIPLE__REPONSES:
+				getReponses().clear();
+				getReponses().addAll((Collection<? extends ReponseChoix>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -180,8 +180,8 @@ public class QuestionChoixMultipleImpl extends QuestionImpl implements QuestionC
 			case QuestionnairePackage.QUESTION_CHOIX_MULTIPLE__NOM:
 				setNom(NOM_EDEFAULT);
 				return;
-			case QuestionnairePackage.QUESTION_CHOIX_MULTIPLE__REPONSE:
-				getReponse().clear();
+			case QuestionnairePackage.QUESTION_CHOIX_MULTIPLE__REPONSES:
+				getReponses().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -197,8 +197,8 @@ public class QuestionChoixMultipleImpl extends QuestionImpl implements QuestionC
 		switch (featureID) {
 			case QuestionnairePackage.QUESTION_CHOIX_MULTIPLE__NOM:
 				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
-			case QuestionnairePackage.QUESTION_CHOIX_MULTIPLE__REPONSE:
-				return reponse != null && !reponse.isEmpty();
+			case QuestionnairePackage.QUESTION_CHOIX_MULTIPLE__REPONSES:
+				return reponses != null && !reponses.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

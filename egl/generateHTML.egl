@@ -1,0 +1,11 @@
+[% 
+
+for (e in Etape.all) {
+	var t : Template = TemplateFactory.load("generateContents.egl");
+	t.populate("etape",e);
+	t.generate("gen/"+e.nom+".html");
+} 
+
+
+
+%]

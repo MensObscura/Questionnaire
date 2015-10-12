@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/Questionnaire/src" modelPluginID="Questionnaire"
     modelName="Questionnaire" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
     copyrightFields="false">
-  <foreignModel>metaQuestionnaire.emf</foreignModel>
+  <foreignModel>metaQuestionnaire.ecore</foreignModel>
   <genPackages prefix="Questionnaire" disposableProviderFactory="true" ecorePackage="metaQuestionnaire.ecore#/">
     <genClasses ecoreClass="metaQuestionnaire.ecore#//Questionnaire">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metaQuestionnaire.ecore#//Questionnaire/titre"/>
@@ -13,8 +13,8 @@
     </genClasses>
     <genClasses ecoreClass="metaQuestionnaire.ecore#//Titre"/>
     <genClasses ecoreClass="metaQuestionnaire.ecore#//Depart">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metaQuestionnaire.ecore#//Depart/firstEtape"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metaQuestionnaire.ecore#//Depart/nom"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metaQuestionnaire.ecore#//Depart/firstEtape"/>
     </genClasses>
     <genClasses ecoreClass="metaQuestionnaire.ecore#//Arrive">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metaQuestionnaire.ecore#//Arrive/nom"/>
@@ -27,7 +27,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metaQuestionnaire.ecore#//QuestionFermee/non"/>
     </genClasses>
     <genClasses ecoreClass="metaQuestionnaire.ecore#//QuestionChoixMultiple">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metaQuestionnaire.ecore#//QuestionChoixMultiple/reponse"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metaQuestionnaire.ecore#//QuestionChoixMultiple/reponses"/>
     </genClasses>
     <genClasses ecoreClass="metaQuestionnaire.ecore#//ReponseText">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metaQuestionnaire.ecore#//ReponseText/nom"/>
@@ -41,6 +41,7 @@
     <genClasses ecoreClass="metaQuestionnaire.ecore#//ReponseChoix"/>
     <genClasses ecoreClass="metaQuestionnaire.ecore#//Question">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metaQuestionnaire.ecore#//Question/nextEtape"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metaQuestionnaire.ecore#//Question/intitule"/>
     </genClasses>
     <genClasses ecoreClass="metaQuestionnaire.ecore#//Etape"/>
     <genClasses ecoreClass="metaQuestionnaire.ecore#//Reponse"/>

@@ -12,11 +12,12 @@ package questionnaire;
  * The following features are supported:
  * <ul>
  *   <li>{@link questionnaire.Question#getNextEtape <em>Next Etape</em>}</li>
+ *   <li>{@link questionnaire.Question#getIntitule <em>Intitule</em>}</li>
  * </ul>
  * </p>
  *
  * @see questionnaire.QuestionnairePackage#getQuestion()
- * @model
+ * @model annotation="gmf.node label='intitule'"
  * @generated
  */
 public interface Question extends Etape {
@@ -45,5 +46,31 @@ public interface Question extends Etape {
 	 * @generated
 	 */
 	void setNextEtape(Etape value);
+
+	/**
+	 * Returns the value of the '<em><b>Intitule</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Intitule</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Intitule</em>' attribute.
+	 * @see #setIntitule(String)
+	 * @see questionnaire.QuestionnairePackage#getQuestion_Intitule()
+	 * @model
+	 * @generated
+	 */
+	String getIntitule();
+
+	/**
+	 * Sets the value of the '{@link questionnaire.Question#getIntitule <em>Intitule</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Intitule</em>' attribute.
+	 * @see #getIntitule()
+	 * @generated
+	 */
+	void setIntitule(String value);
 
 } // Question

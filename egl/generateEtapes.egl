@@ -1,0 +1,30 @@
+<p>
+[%= this.nom %]
+</p>
+[%= this.generateBoutonSuivant() %]
+
+[% 
+  
+  operation Depart generateBoutonSuivant() : String {
+  	return "<button onclick=\"sessionStorage.clear();window.location.href='"+self.firstEtape.nom+".html'\">Commencer</button>";
+  }
+  
+  operation Arrive generateBoutonSuivant() : String {
+  	var recap : String = "<h1>Vos reponses :</h1>";
+  	recap = recap + "<table border =1>\n";
+  
+  	for (page in Question.all)
+  		recap = recap + "<tr><td>"+page.intitule+"</td><td id='"+page.nom+"' ></td></tr>\n";
+  		
+  	var script : String = "<script>\n";
+  	
+  	for (page in Question.all) {
+  		script = script + "d = document.getElementById('"+page.nom+"');\n";
+		script = script + "d.innerHTML = sessionStorage.getItem('"+page.nom+"');\n";
+	}
+  
+  	script = script + "</script>\n";
+  
+  	return "<table>" + recap + script;
+  }
+%]

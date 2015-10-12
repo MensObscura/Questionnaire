@@ -18,11 +18,11 @@
         <diagramLabel
             href="metaQuestionnaire.gmfgraph#QuestionOuverteLabel"/>
         <features
-            href="metaQuestionnaire.ecore#//ElementAvecNom/nom"/>
+            href="metaQuestionnaire.ecore#//Question/intitule"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="metaQuestionnaire.gmftool#//@palette/@tools.0/@tools.5"/>
+          href="metaQuestionnaire.gmftool#//@palette/@tools.0/@tools.6"/>
       <diagramNode
           href="metaQuestionnaire.gmfgraph#QuestionOuverte"/>
       <children
@@ -42,7 +42,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="metaQuestionnaire.gmftool#//@palette/@tools.0/@tools.10"/>
+              href="metaQuestionnaire.gmftool#//@palette/@tools.0/@tools.11"/>
           <diagramNode
               href="metaQuestionnaire.gmfgraph#ReponseText"/>
         </ownedChild>
@@ -66,11 +66,11 @@
         <diagramLabel
             href="metaQuestionnaire.gmfgraph#QuestionFermeeLabel"/>
         <features
-            href="metaQuestionnaire.ecore#//ElementAvecNom/nom"/>
+            href="metaQuestionnaire.ecore#//Question/intitule"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="metaQuestionnaire.gmftool#//@palette/@tools.0/@tools.4"/>
+          href="metaQuestionnaire.gmftool#//@palette/@tools.0/@tools.5"/>
       <diagramNode
           href="metaQuestionnaire.gmfgraph#QuestionFermee"/>
       <children
@@ -90,7 +90,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="metaQuestionnaire.gmftool#//@palette/@tools.0/@tools.9"/>
+              href="metaQuestionnaire.gmftool#//@palette/@tools.0/@tools.10"/>
           <diagramNode
               href="metaQuestionnaire.gmfgraph#ReponseOui"/>
         </ownedChild>
@@ -112,7 +112,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="metaQuestionnaire.gmftool#//@palette/@tools.0/@tools.8"/>
+              href="metaQuestionnaire.gmftool#//@palette/@tools.0/@tools.9"/>
           <diagramNode
               href="metaQuestionnaire.gmfgraph#ReponseNon"/>
         </ownedChild>
@@ -141,17 +141,17 @@
         <diagramLabel
             href="metaQuestionnaire.gmfgraph#QuestionChoixMultipleLabel"/>
         <features
-            href="metaQuestionnaire.ecore#//ElementAvecNom/nom"/>
+            href="metaQuestionnaire.ecore#//Question/intitule"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="metaQuestionnaire.gmftool#//@palette/@tools.0/@tools.3"/>
+          href="metaQuestionnaire.gmftool#//@palette/@tools.0/@tools.4"/>
       <diagramNode
           href="metaQuestionnaire.gmfgraph#QuestionChoixMultiple"/>
       <children
           compartment="//@nodes.2/@ownedChild/@compartments.0">
         <containmentFeature
-            href="metaQuestionnaire.ecore#//QuestionChoixMultiple/reponse"/>
+            href="metaQuestionnaire.ecore#//QuestionChoixMultiple/reponses"/>
         <ownedChild>
           <domainMetaElement
               href="metaQuestionnaire.ecore#//ReponseChoix"/>
@@ -164,7 +164,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="metaQuestionnaire.gmftool#//@palette/@tools.0/@tools.7"/>
+              href="metaQuestionnaire.gmftool#//@palette/@tools.0/@tools.8"/>
           <diagramNode
               href="metaQuestionnaire.gmfgraph#ReponseChoix"/>
         </ownedChild>
@@ -172,7 +172,7 @@
       <compartments
           children="//@nodes.2/@ownedChild/@children.0">
         <compartment
-            href="metaQuestionnaire.gmfgraph#QuestionChoixMultipleReponseCompartment"/>
+            href="metaQuestionnaire.gmfgraph#QuestionChoixMultipleReponsesCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
@@ -191,7 +191,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="metaQuestionnaire.gmftool#//@palette/@tools.0/@tools.11"/>
+          href="metaQuestionnaire.gmftool#//@palette/@tools.0/@tools.12"/>
       <diagramNode
           href="metaQuestionnaire.gmfgraph#Titre"/>
     </ownedChild>
@@ -215,6 +215,26 @@
           href="metaQuestionnaire.gmftool#//@palette/@tools.0/@tools.1"/>
       <diagramNode
           href="metaQuestionnaire.gmfgraph#Depart"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="metaQuestionnaire.ecore#//Questionnaire/questions"/>
+    <ownedChild>
+      <domainMetaElement
+          href="metaQuestionnaire.ecore#//Question"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="metaQuestionnaire.gmfgraph#QuestionLabel"/>
+        <features
+            href="metaQuestionnaire.ecore#//Question/intitule"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="metaQuestionnaire.gmftool#//@palette/@tools.0/@tools.3"/>
+      <diagramNode
+          href="metaQuestionnaire.gmfgraph#Question"/>
     </ownedChild>
   </nodes>
   <nodes>

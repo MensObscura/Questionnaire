@@ -205,22 +205,22 @@ public interface QuestionnairePackage extends EPackage {
 	int DEPART = 2;
 
 	/**
-	 * The feature id for the '<em><b>First Etape</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPART__FIRST_ETAPE = ETAPE_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Nom</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPART__NOM = ETAPE_FEATURE_COUNT + 1;
+	int DEPART__NOM = ETAPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>First Etape</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPART__FIRST_ETAPE = ETAPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Depart</em>' class.
@@ -279,13 +279,22 @@ public interface QuestionnairePackage extends EPackage {
 	int QUESTION__NEXT_ETAPE = ETAPE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Intitule</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION__INTITULE = ETAPE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Question</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUESTION_FEATURE_COUNT = ETAPE_FEATURE_COUNT + 1;
+	int QUESTION_FEATURE_COUNT = ETAPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link questionnaire.impl.QuestionOuverteImpl <em>Question Ouverte</em>}' class.
@@ -305,6 +314,15 @@ public interface QuestionnairePackage extends EPackage {
 	 * @ordered
 	 */
 	int QUESTION_OUVERTE__NEXT_ETAPE = QUESTION__NEXT_ETAPE;
+
+	/**
+	 * The feature id for the '<em><b>Intitule</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION_OUVERTE__INTITULE = QUESTION__INTITULE;
 
 	/**
 	 * The feature id for the '<em><b>Nom</b></em>' attribute.
@@ -351,6 +369,15 @@ public interface QuestionnairePackage extends EPackage {
 	 * @ordered
 	 */
 	int QUESTION_FERMEE__NEXT_ETAPE = QUESTION__NEXT_ETAPE;
+
+	/**
+	 * The feature id for the '<em><b>Intitule</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION_FERMEE__INTITULE = QUESTION__INTITULE;
 
 	/**
 	 * The feature id for the '<em><b>Nom</b></em>' attribute.
@@ -408,6 +435,15 @@ public interface QuestionnairePackage extends EPackage {
 	int QUESTION_CHOIX_MULTIPLE__NEXT_ETAPE = QUESTION__NEXT_ETAPE;
 
 	/**
+	 * The feature id for the '<em><b>Intitule</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION_CHOIX_MULTIPLE__INTITULE = QUESTION__INTITULE;
+
+	/**
 	 * The feature id for the '<em><b>Nom</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -417,13 +453,13 @@ public interface QuestionnairePackage extends EPackage {
 	int QUESTION_CHOIX_MULTIPLE__NOM = QUESTION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Reponse</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Reponses</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUESTION_CHOIX_MULTIPLE__REPONSE = QUESTION_FEATURE_COUNT + 1;
+	int QUESTION_CHOIX_MULTIPLE__REPONSES = QUESTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Question Choix Multiple</em>' class.
@@ -696,17 +732,6 @@ public interface QuestionnairePackage extends EPackage {
 	EClass getDepart();
 
 	/**
-	 * Returns the meta object for the reference '{@link questionnaire.Depart#getFirstEtape <em>First Etape</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>First Etape</em>'.
-	 * @see questionnaire.Depart#getFirstEtape()
-	 * @see #getDepart()
-	 * @generated
-	 */
-	EReference getDepart_FirstEtape();
-
-	/**
 	 * Returns the meta object for the attribute '{@link questionnaire.Depart#getNom <em>Nom</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -716,6 +741,17 @@ public interface QuestionnairePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDepart_Nom();
+
+	/**
+	 * Returns the meta object for the reference '{@link questionnaire.Depart#getFirstEtape <em>First Etape</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>First Etape</em>'.
+	 * @see questionnaire.Depart#getFirstEtape()
+	 * @see #getDepart()
+	 * @generated
+	 */
+	EReference getDepart_FirstEtape();
 
 	/**
 	 * Returns the meta object for class '{@link questionnaire.Arrive <em>Arrive</em>}'.
@@ -802,15 +838,15 @@ public interface QuestionnairePackage extends EPackage {
 	EClass getQuestionChoixMultiple();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link questionnaire.QuestionChoixMultiple#getReponse <em>Reponse</em>}'.
+	 * Returns the meta object for the containment reference list '{@link questionnaire.QuestionChoixMultiple#getReponses <em>Reponses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Reponse</em>'.
-	 * @see questionnaire.QuestionChoixMultiple#getReponse()
+	 * @return the meta object for the containment reference list '<em>Reponses</em>'.
+	 * @see questionnaire.QuestionChoixMultiple#getReponses()
 	 * @see #getQuestionChoixMultiple()
 	 * @generated
 	 */
-	EReference getQuestionChoixMultiple_Reponse();
+	EReference getQuestionChoixMultiple_Reponses();
 
 	/**
 	 * Returns the meta object for class '{@link questionnaire.ReponseText <em>Reponse Text</em>}'.
@@ -905,6 +941,17 @@ public interface QuestionnairePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getQuestion_NextEtape();
+
+	/**
+	 * Returns the meta object for the attribute '{@link questionnaire.Question#getIntitule <em>Intitule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Intitule</em>'.
+	 * @see questionnaire.Question#getIntitule()
+	 * @see #getQuestion()
+	 * @generated
+	 */
+	EAttribute getQuestion_Intitule();
 
 	/**
 	 * Returns the meta object for class '{@link questionnaire.Etape <em>Etape</em>}'.
@@ -1053,20 +1100,20 @@ public interface QuestionnairePackage extends EPackage {
 		EClass DEPART = eINSTANCE.getDepart();
 
 		/**
-		 * The meta object literal for the '<em><b>First Etape</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DEPART__FIRST_ETAPE = eINSTANCE.getDepart_FirstEtape();
-
-		/**
 		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute DEPART__NOM = eINSTANCE.getDepart_Nom();
+
+		/**
+		 * The meta object literal for the '<em><b>First Etape</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEPART__FIRST_ETAPE = eINSTANCE.getDepart_FirstEtape();
 
 		/**
 		 * The meta object literal for the '{@link questionnaire.impl.ArriveImpl <em>Arrive</em>}' class.
@@ -1141,12 +1188,12 @@ public interface QuestionnairePackage extends EPackage {
 		EClass QUESTION_CHOIX_MULTIPLE = eINSTANCE.getQuestionChoixMultiple();
 
 		/**
-		 * The meta object literal for the '<em><b>Reponse</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Reponses</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference QUESTION_CHOIX_MULTIPLE__REPONSE = eINSTANCE.getQuestionChoixMultiple_Reponse();
+		EReference QUESTION_CHOIX_MULTIPLE__REPONSES = eINSTANCE.getQuestionChoixMultiple_Reponses();
 
 		/**
 		 * The meta object literal for the '{@link questionnaire.impl.ReponseTextImpl <em>Reponse Text</em>}' class.
@@ -1229,6 +1276,14 @@ public interface QuestionnairePackage extends EPackage {
 		 * @generated
 		 */
 		EReference QUESTION__NEXT_ETAPE = eINSTANCE.getQuestion_NextEtape();
+
+		/**
+		 * The meta object literal for the '<em><b>Intitule</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute QUESTION__INTITULE = eINSTANCE.getQuestion_Intitule();
 
 		/**
 		 * The meta object literal for the '{@link questionnaire.impl.EtapeImpl <em>Etape</em>}' class.

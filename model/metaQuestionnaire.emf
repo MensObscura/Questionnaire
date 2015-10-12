@@ -18,18 +18,19 @@ class Titre extends ElementAvecNom{
 	
 }
 
-@gmf.node(label="nom",label.text="Départ",label.readOnly="true")
+@gmf.node(label="nom",label.text="Depart",label.readOnly="true")
 class Depart extends Etape{
 
+	attr String nom ="Depart";
 	@gmf.link(target.decoration="arrow")
 	ref Etape firstEtape;
-	attr String nom;
+	
 
 }
 
-@gmf.node(label="nom",label.text="Arrivée",label.readOnly="true")
+@gmf.node(label="nom",label.text="Arrivee",label.readOnly="true")
 class Arrive extends Etape{
-	attr String nom;
+	attr String nom = "Arrivee";
 }
 
 
@@ -50,7 +51,7 @@ class QuestionFermee extends Question, ElementAvecNom{
 class QuestionChoixMultiple extends Question, ElementAvecNom{
 
 	@gmf.compartment
-	val ReponseChoix[2..*] reponse;
+	val ReponseChoix[2..*] reponses;
 	
 }
 
@@ -58,21 +59,21 @@ class QuestionChoixMultiple extends Question, ElementAvecNom{
 @gmf.node(label="nom",label.text="TextInput",label.readOnly="true")
 class ReponseText extends Reponse {
 
-	attr String nom;
+	attr String nom ;
 }
 
 
 @gmf.node(label="nom",label.text="Oui",label.readOnly="true")
 class ReponseOui extends ReponseRedirigable {
 		
-	attr String nom;
+	attr String nom ="oui";
 	
 }
 
 @gmf.node(label="nom",label.text="Non",label.readOnly="true")
 class ReponseNon extends ReponseRedirigable {
 
-	attr String nom;
+	attr String nom ="non";
 	
 }
 
@@ -80,11 +81,12 @@ class ReponseChoix extends ElementAvecNom , ReponseRedirigable {
 	
 }
 
-
+@gmf.node(label="intitule")
 class Question extends Etape {
 	
 	@gmf.link(target.decoration="arrow")
 	ref Etape nextEtape;
+	attr String intitule;
 	
 }
 

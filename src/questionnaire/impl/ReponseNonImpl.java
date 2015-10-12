@@ -33,7 +33,7 @@ public class ReponseNonImpl extends ReponseRedirigableImpl implements ReponseNon
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NOM_EDEFAULT = null;
+	protected static final String NOM_EDEFAULT = "non";
 
 	/**
 	 * The cached value of the '{@link #getNom() <em>Nom</em>}' attribute.

@@ -276,8 +276,8 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDepart_FirstEtape() {
-		return (EReference)departEClass.getEStructuralFeatures().get(0);
+	public EAttribute getDepart_Nom() {
+		return (EAttribute)departEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -285,8 +285,8 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDepart_Nom() {
-		return (EAttribute)departEClass.getEStructuralFeatures().get(1);
+	public EReference getDepart_FirstEtape() {
+		return (EReference)departEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -366,7 +366,7 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getQuestionChoixMultiple_Reponse() {
+	public EReference getQuestionChoixMultiple_Reponses() {
 		return (EReference)questionChoixMultipleEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -449,6 +449,15 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 	 */
 	public EReference getQuestion_NextEtape() {
 		return (EReference)questionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getQuestion_Intitule() {
+		return (EAttribute)questionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -542,8 +551,8 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 		titreEClass = createEClass(TITRE);
 
 		departEClass = createEClass(DEPART);
-		createEReference(departEClass, DEPART__FIRST_ETAPE);
 		createEAttribute(departEClass, DEPART__NOM);
+		createEReference(departEClass, DEPART__FIRST_ETAPE);
 
 		arriveEClass = createEClass(ARRIVE);
 		createEAttribute(arriveEClass, ARRIVE__NOM);
@@ -556,7 +565,7 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 		createEReference(questionFermeeEClass, QUESTION_FERMEE__NON);
 
 		questionChoixMultipleEClass = createEClass(QUESTION_CHOIX_MULTIPLE);
-		createEReference(questionChoixMultipleEClass, QUESTION_CHOIX_MULTIPLE__REPONSE);
+		createEReference(questionChoixMultipleEClass, QUESTION_CHOIX_MULTIPLE__REPONSES);
 
 		reponseTextEClass = createEClass(REPONSE_TEXT);
 		createEAttribute(reponseTextEClass, REPONSE_TEXT__NOM);
@@ -571,6 +580,7 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 
 		questionEClass = createEClass(QUESTION);
 		createEReference(questionEClass, QUESTION__NEXT_ETAPE);
+		createEAttribute(questionEClass, QUESTION__INTITULE);
 
 		etapeEClass = createEClass(ETAPE);
 
@@ -639,11 +649,11 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 		initEClass(titreEClass, Titre.class, "Titre", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(departEClass, Depart.class, "Depart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDepart_Nom(), ecorePackage.getEString(), "nom", "Depart", 0, 1, Depart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDepart_FirstEtape(), this.getEtape(), null, "firstEtape", null, 0, 1, Depart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDepart_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Depart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(arriveEClass, Arrive.class, "Arrive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getArrive_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Arrive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getArrive_Nom(), ecorePackage.getEString(), "nom", "Arrivee", 0, 1, Arrive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(questionOuverteEClass, QuestionOuverte.class, "QuestionOuverte", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getQuestionOuverte_Reponse(), this.getReponseText(), null, "reponse", null, 1, 1, QuestionOuverte.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -653,21 +663,22 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 		initEReference(getQuestionFermee_Non(), this.getReponseNon(), null, "non", null, 1, 1, QuestionFermee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(questionChoixMultipleEClass, QuestionChoixMultiple.class, "QuestionChoixMultiple", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getQuestionChoixMultiple_Reponse(), this.getReponseChoix(), null, "reponse", null, 2, -1, QuestionChoixMultiple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQuestionChoixMultiple_Reponses(), this.getReponseChoix(), null, "reponses", null, 2, -1, QuestionChoixMultiple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reponseTextEClass, ReponseText.class, "ReponseText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getReponseText_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, ReponseText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reponseOuiEClass, ReponseOui.class, "ReponseOui", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getReponseOui_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, ReponseOui.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReponseOui_Nom(), ecorePackage.getEString(), "nom", "oui", 0, 1, ReponseOui.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reponseNonEClass, ReponseNon.class, "ReponseNon", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getReponseNon_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, ReponseNon.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReponseNon_Nom(), ecorePackage.getEString(), "nom", "non", 0, 1, ReponseNon.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reponseChoixEClass, ReponseChoix.class, "ReponseChoix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(questionEClass, Question.class, "Question", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getQuestion_NextEtape(), this.getEtape(), null, "nextEtape", null, 0, 1, Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQuestion_Intitule(), ecorePackage.getEString(), "intitule", null, 0, 1, Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(etapeEClass, Etape.class, "Etape", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -738,7 +749,7 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 		   source, 
 		   new String[] {
 			 "label", "nom",
-			 "label.text", "D\u00c3\u00a9part",
+			 "label.text", "Depart",
 			 "label.readOnly", "true"
 		   });	
 		addAnnotation
@@ -746,7 +757,7 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 		   source, 
 		   new String[] {
 			 "label", "nom",
-			 "label.text", "Arriv\u00c3\u00a9e",
+			 "label.text", "Arrivee",
 			 "label.readOnly", "true"
 		   });	
 		addAnnotation
@@ -772,6 +783,12 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 			 "label", "nom",
 			 "label.text", "Non",
 			 "label.readOnly", "true"
+		   });	
+		addAnnotation
+		  (questionEClass, 
+		   source, 
+		   new String[] {
+			 "label", "intitule"
 		   });	
 		addAnnotation
 		  (elementAvecNomEClass, 
@@ -833,7 +850,7 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getQuestionChoixMultiple_Reponse(), 
+		  (getQuestionChoixMultiple_Reponses(), 
 		   source, 
 		   new String[] {
 		   });

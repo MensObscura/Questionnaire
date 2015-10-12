@@ -16,12 +16,13 @@ package questionnaire;
  * </p>
  *
  * @see questionnaire.QuestionnairePackage#getArrive()
- * @model annotation="gmf.node label='nom' label.text='Arriv\303\251e' label.readOnly='true'"
+ * @model annotation="gmf.node label='nom' label.text='Arrivee' label.readOnly='true'"
  * @generated
  */
 public interface Arrive extends Etape {
 	/**
 	 * Returns the value of the '<em><b>Nom</b></em>' attribute.
+	 * The default value is <code>"Arrivee"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Nom</em>' attribute isn't clear,
@@ -31,7 +32,7 @@ public interface Arrive extends Etape {
 	 * @return the value of the '<em>Nom</em>' attribute.
 	 * @see #setNom(String)
 	 * @see questionnaire.QuestionnairePackage#getArrive_Nom()
-	 * @model
+	 * @model default="Arrivee"
 	 * @generated
 	 */
 	String getNom();

@@ -20,24 +20,14 @@ import questionnaire.QuestionnairePackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link questionnaire.impl.DepartImpl#getFirstEtape <em>First Etape</em>}</li>
  *   <li>{@link questionnaire.impl.DepartImpl#getNom <em>Nom</em>}</li>
+ *   <li>{@link questionnaire.impl.DepartImpl#getFirstEtape <em>First Etape</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class DepartImpl extends EtapeImpl implements Depart {
-	/**
-	 * The cached value of the '{@link #getFirstEtape() <em>First Etape</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFirstEtape()
-	 * @generated
-	 * @ordered
-	 */
-	protected Etape firstEtape;
-
 	/**
 	 * The default value of the '{@link #getNom() <em>Nom</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -46,7 +36,7 @@ public class DepartImpl extends EtapeImpl implements Depart {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NOM_EDEFAULT = null;
+	protected static final String NOM_EDEFAULT = "Depart";
 
 	/**
 	 * The cached value of the '{@link #getNom() <em>Nom</em>}' attribute.
@@ -57,6 +47,16 @@ public class DepartImpl extends EtapeImpl implements Depart {
 	 * @ordered
 	 */
 	protected String nom = NOM_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getFirstEtape() <em>First Etape</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFirstEtape()
+	 * @generated
+	 * @ordered
+	 */
+	protected Etape firstEtape;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,6 +75,27 @@ public class DepartImpl extends EtapeImpl implements Depart {
 	@Override
 	protected EClass eStaticClass() {
 		return QuestionnairePackage.Literals.DEPART;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getNom() {
+		return nom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNom(String newNom) {
+		String oldNom = nom;
+		nom = newNom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.DEPART__NOM, oldNom, nom));
 	}
 
 	/**
@@ -120,35 +141,14 @@ public class DepartImpl extends EtapeImpl implements Depart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getNom() {
-		return nom;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNom(String newNom) {
-		String oldNom = nom;
-		nom = newNom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.DEPART__NOM, oldNom, nom));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case QuestionnairePackage.DEPART__NOM:
+				return getNom();
 			case QuestionnairePackage.DEPART__FIRST_ETAPE:
 				if (resolve) return getFirstEtape();
 				return basicGetFirstEtape();
-			case QuestionnairePackage.DEPART__NOM:
-				return getNom();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -161,11 +161,11 @@ public class DepartImpl extends EtapeImpl implements Depart {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case QuestionnairePackage.DEPART__FIRST_ETAPE:
-				setFirstEtape((Etape)newValue);
-				return;
 			case QuestionnairePackage.DEPART__NOM:
 				setNom((String)newValue);
+				return;
+			case QuestionnairePackage.DEPART__FIRST_ETAPE:
+				setFirstEtape((Etape)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -179,11 +179,11 @@ public class DepartImpl extends EtapeImpl implements Depart {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case QuestionnairePackage.DEPART__FIRST_ETAPE:
-				setFirstEtape((Etape)null);
-				return;
 			case QuestionnairePackage.DEPART__NOM:
 				setNom(NOM_EDEFAULT);
+				return;
+			case QuestionnairePackage.DEPART__FIRST_ETAPE:
+				setFirstEtape((Etape)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -197,10 +197,10 @@ public class DepartImpl extends EtapeImpl implements Depart {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case QuestionnairePackage.DEPART__FIRST_ETAPE:
-				return firstEtape != null;
 			case QuestionnairePackage.DEPART__NOM:
 				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
+			case QuestionnairePackage.DEPART__FIRST_ETAPE:
+				return firstEtape != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -22,6 +22,7 @@ package questionnaire;
 public interface ReponseNon extends ReponseRedirigable {
 	/**
 	 * Returns the value of the '<em><b>Nom</b></em>' attribute.
+	 * The default value is <code>"non"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Nom</em>' attribute isn't clear,
@@ -31,7 +32,7 @@ public interface ReponseNon extends ReponseRedirigable {
 	 * @return the value of the '<em>Nom</em>' attribute.
 	 * @see #setNom(String)
 	 * @see questionnaire.QuestionnairePackage#getReponseNon_Nom()
-	 * @model
+	 * @model default="non"
 	 * @generated
 	 */
 	String getNom();

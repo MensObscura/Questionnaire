@@ -33,7 +33,7 @@ public class ArriveImpl extends EtapeImpl implements Arrive {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NOM_EDEFAULT = null;
+	protected static final String NOM_EDEFAULT = "Arrivee";
 
 	/**
 	 * The cached value of the '{@link #getNom() <em>Nom</em>}' attribute.

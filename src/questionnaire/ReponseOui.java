@@ -22,6 +22,7 @@ package questionnaire;
 public interface ReponseOui extends ReponseRedirigable {
 	/**
 	 * Returns the value of the '<em><b>Nom</b></em>' attribute.
+	 * The default value is <code>"oui"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Nom</em>' attribute isn't clear,
@@ -31,7 +32,7 @@ public interface ReponseOui extends ReponseRedirigable {
 	 * @return the value of the '<em>Nom</em>' attribute.
 	 * @see #setNom(String)
 	 * @see questionnaire.QuestionnairePackage#getReponseOui_Nom()
-	 * @model
+	 * @model default="oui"
 	 * @generated
 	 */
 	String getNom();

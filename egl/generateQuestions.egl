@@ -1,0 +1,127 @@
+
+
+<p>
+
+[%= this.nom %]
+<br>
+[%= this.intitule %]
+</p>
+[%= this.generateInput() %]
+<br>
+[%= this.generateBoutonSuivant() %]
+
+[% 
+
+
+  operation QuestionOuverte generateBoutonSuivant() : String {
+  	var button : String = "<button onclick=\"valider()\">Continuer</button>\n";
+  	
+  	var script : String = "<script>\n";
+  	script = script + "	function valider() {\n";
+  	script = script + "	var texte = document.getElementById('text');\n";
+
+  	
+  
+    script = script + self.reponse.script(self);
+  		
+  	script = script + "	}\n";
+	script = script + "</script>";
+  		
+  	return button+script;
+  }
+
+
+ operation QuestionChoixMultiple generateBoutonSuivant() : String {
+  	var button : String = "<button onclick=\"valider()\">Continuer</button>\n";
+  	
+  	var script : String = "<script>\n";
+  	script = script + "	function valider() {\n";
+  	script = script + "		var selectElmt = document.getElementById('val');\n";
+  	
+  	script = script + "if (selectElmt == null || selectElmt != null ) {\n";		
+  	script = script + "			if (selectElmt != null) {sessionStorage.setItem('"+self.nom+"',selectElmt.elements['"+self.nom+"'].value);}\n";
+  		
+  	for(rep in self.reponses)
+  		script = script + rep.script(self);
+  		
+  	script = script + "	}\n";
+  	script = script + "	}\n";
+	script = script + "</script>";
+  		
+  	return button+script;
+  }
+  
+  operation QuestionFermee generateBoutonSuivant() : String {
+  	var button : String = "<button onclick=\"valider()\">Continuer</button>\n";
+  	
+  	var script : String = "<script>\n";
+  	script = script + "	function valider() {\n";
+
+  	script = script + "		var selectElmt = document.getElementById('val');\n";
+  	
+
+  	
+  	script = script + "if (selectElmt == null || selectElmt != null ) {\n";		
+  	script = script + "			if (selectElmt != null) {sessionStorage.setItem('"+self.nom+"',selectElmt.elements['"+self.nom+"'].value);}\n";
+  
+  	script = script +self.oui.script(self);
+  	script = script +self.non.script(self);
+  	script = script + "	}\n";
+  	script = script + "	}\n";
+	script = script + "</script>";
+  		
+  	return button+script;
+  }
+  
+    
+  
+  operation QuestionChoixMultiple generateInput() : String {
+  	var form : String = "<form id='val'>";
+  	
+  	for (rep in self.reponses)
+  		form = form +"<label><input type='radio' name='"+self.nom+"' value='"+rep.nom+"' >"+rep.nom+"</label><br>";
+  	
+  	return form+"</form>";
+  }
+  
+  operation QuestionFermee generateInput() : String {
+  	var form : String = "<form id='val'>";
+  	form =  form +"<input type='radio' name='"+self.nom+"' value='"+self.oui.nom+"'> Oui</label><br>";
+  	form =  form +"<label><input type='radio' name='"+self.nom+"' value='"+self.non.nom+"'> Non</label>";
+  	return form+"</form>";
+  	
+  	
+  }
+  
+  operation QuestionOuverte generateInput() : String {
+    return "<textarea id='text' rows=\"4\" cols=\"50\"></textarea>";
+ 
+  }
+  
+   operation ReponseText script(param : Question) : String {
+  
+  	
+  	var script : String =  "		if (texte == null || texte != null ) {\n";
+  	script = script + "			if (texte != null) {sessionStorage.setItem('"+param.nom+"',texte.value);}";
+  	script = script + "			window.location.href='"+param.nextEtape.nom+".html';}\n";  	
+
+  	return script;
+  }
+  
+    operation ReponseRedirigable script(param : Question ) : String {
+  	var script : String =  "if(selectElmt.elements['"+param.nom+"'].value == \""+self.nom+"\"){";
+  	if(self.questionRedirect <> null){
+  	script = script + "			window.location.href='"+self.questionRedirect.nom+".html';}\n";  	
+  	}else{
+  	script = script + "			window.location.href='"+param.nextEtape.nom+".html';}\n";  	
+  	}
+  	
+
+  	return script;
+  }
+  
+ 
+  
+  
+
+%]

@@ -21,6 +21,7 @@ import questionnaire.QuestionnairePackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link questionnaire.impl.QuestionImpl#getNextEtape <em>Next Etape</em>}</li>
+ *   <li>{@link questionnaire.impl.QuestionImpl#getIntitule <em>Intitule</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,6 +37,26 @@ public class QuestionImpl extends EtapeImpl implements Question {
 	 * @ordered
 	 */
 	protected Etape nextEtape;
+
+	/**
+	 * The default value of the '{@link #getIntitule() <em>Intitule</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntitule()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String INTITULE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getIntitule() <em>Intitule</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntitule()
+	 * @generated
+	 * @ordered
+	 */
+	protected String intitule = INTITULE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -99,12 +120,35 @@ public class QuestionImpl extends EtapeImpl implements Question {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getIntitule() {
+		return intitule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIntitule(String newIntitule) {
+		String oldIntitule = intitule;
+		intitule = newIntitule;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.QUESTION__INTITULE, oldIntitule, intitule));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case QuestionnairePackage.QUESTION__NEXT_ETAPE:
 				if (resolve) return getNextEtape();
 				return basicGetNextEtape();
+			case QuestionnairePackage.QUESTION__INTITULE:
+				return getIntitule();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -119,6 +163,9 @@ public class QuestionImpl extends EtapeImpl implements Question {
 		switch (featureID) {
 			case QuestionnairePackage.QUESTION__NEXT_ETAPE:
 				setNextEtape((Etape)newValue);
+				return;
+			case QuestionnairePackage.QUESTION__INTITULE:
+				setIntitule((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -135,6 +182,9 @@ public class QuestionImpl extends EtapeImpl implements Question {
 			case QuestionnairePackage.QUESTION__NEXT_ETAPE:
 				setNextEtape((Etape)null);
 				return;
+			case QuestionnairePackage.QUESTION__INTITULE:
+				setIntitule(INTITULE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -149,8 +199,26 @@ public class QuestionImpl extends EtapeImpl implements Question {
 		switch (featureID) {
 			case QuestionnairePackage.QUESTION__NEXT_ETAPE:
 				return nextEtape != null;
+			case QuestionnairePackage.QUESTION__INTITULE:
+				return INTITULE_EDEFAULT == null ? intitule != null : !INTITULE_EDEFAULT.equals(intitule);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (intitule: ");
+		result.append(intitule);
+		result.append(')');
+		return result.toString();
 	}
 
 } //QuestionImpl

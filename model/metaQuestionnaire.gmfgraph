@@ -26,7 +26,7 @@
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="DepartLabelFigure" text="D&#xc3;&#xa9;part"/>
+        <children xsi:type="gmfgraph:Label" name="DepartLabelFigure" text="Depart"/>
       </actualFigure>
       <accessors accessor="getFigureDepartLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
     </descriptors>
@@ -35,7 +35,7 @@
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="ArriveLabelFigure" text="Arriv&#xc3;&#xa9;e"/>
+        <children xsi:type="gmfgraph:Label" name="ArriveLabelFigure" text="Arrivee"/>
       </actualFigure>
       <accessors accessor="getFigureArriveLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
     </descriptors>
@@ -75,10 +75,10 @@
         <children xsi:type="gmfgraph:Label" name="QuestionChoixMultipleLabelFigure" text="QuestionChoixMultiple">
           <maximumSize dx="10000" dy="50"/>
         </children>
-        <children xsi:type="gmfgraph:Rectangle" name="QuestionChoixMultipleReponseCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="QuestionChoixMultipleReponsesCompartmentFigure" outline="false"/>
       </actualFigure>
       <accessors accessor="getFigureQuestionChoixMultipleLabelFigure" figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
-      <accessors accessor="getQuestionChoixMultipleReponseCompartmentFigure" figure="//@figures.0/@descriptors.6/@actualFigure/@children.1"/>
+      <accessors accessor="getQuestionChoixMultipleReponsesCompartmentFigure" figure="//@figures.0/@descriptors.6/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors name="ReponseTextFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ReponseTextFigure">
@@ -116,6 +116,15 @@
       </actualFigure>
       <accessors accessor="getFigureReponseChoixLabelFigure" figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
     </descriptors>
+    <descriptors name="QuestionFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="QuestionFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="QuestionLabelFigure" text="Question"/>
+      </actualFigure>
+      <accessors accessor="getFigureQuestionLabelFigure" figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
+    </descriptors>
     <descriptors name="ElementAvecNomFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ElementAvecNomFigure">
         <border xsi:type="gmfgraph:MarginBorder">
@@ -123,7 +132,7 @@
         </border>
         <children xsi:type="gmfgraph:Label" name="ElementAvecNomLabelFigure" text="ElementAvecNom"/>
       </actualFigure>
-      <accessors accessor="getFigureElementAvecNomLabelFigure" figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureElementAvecNomLabelFigure" figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="DepartFirstEtapeFigure">
       <actualFigure xsi:type="gmfgraph:PolylineConnection" name="DepartFirstEtapeFigure" targetDecoration="//@figures.0/@figures.0"/>
@@ -155,6 +164,7 @@
   <nodes name="ReponseOui" figure="ReponseOuiFigure"/>
   <nodes name="ReponseNon" figure="ReponseNonFigure"/>
   <nodes name="ReponseChoix" figure="ReponseChoixFigure"/>
+  <nodes name="Question" figure="QuestionFigure"/>
   <nodes name="ElementAvecNom" figure="ElementAvecNomFigure"/>
   <connections name="DepartFirstEtape" figure="DepartFirstEtapeFigure"/>
   <connections name="QuestionNextEtape" figure="QuestionNextEtapeFigure"/>
@@ -162,7 +172,7 @@
   <compartments name="QuestionOuverteReponseCompartment" figure="QuestionOuverteFigure" collapsible="true" accessor="//@figures.0/@descriptors.4/@accessors.1"/>
   <compartments name="QuestionFermeeOuiCompartment" figure="QuestionFermeeFigure" collapsible="true" accessor="//@figures.0/@descriptors.5/@accessors.1"/>
   <compartments name="QuestionFermeeNonCompartment" figure="QuestionFermeeFigure" collapsible="true" accessor="//@figures.0/@descriptors.5/@accessors.2"/>
-  <compartments name="QuestionChoixMultipleReponseCompartment" figure="QuestionChoixMultipleFigure" collapsible="true" accessor="//@figures.0/@descriptors.6/@accessors.1"/>
+  <compartments name="QuestionChoixMultipleReponsesCompartment" figure="QuestionChoixMultipleFigure" collapsible="true" accessor="//@figures.0/@descriptors.6/@accessors.1"/>
   <labels name="QuestionnaireLabel" figure="QuestionnaireFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <labels name="TitreLabel" figure="TitreFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
   <labels name="DepartLabel" figure="DepartFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
@@ -174,7 +184,8 @@
   <labels name="ReponseOuiLabel" figure="ReponseOuiFigure" accessor="//@figures.0/@descriptors.8/@accessors.0"/>
   <labels name="ReponseNonLabel" figure="ReponseNonFigure" accessor="//@figures.0/@descriptors.9/@accessors.0"/>
   <labels name="ReponseChoixLabel" figure="ReponseChoixFigure" accessor="//@figures.0/@descriptors.10/@accessors.0"/>
-  <labels name="ElementAvecNomLabel" figure="ElementAvecNomFigure" accessor="//@figures.0/@descriptors.11/@accessors.0"/>
+  <labels name="QuestionLabel" figure="QuestionFigure" accessor="//@figures.0/@descriptors.11/@accessors.0"/>
+  <labels name="ElementAvecNomLabel" figure="ElementAvecNomFigure" accessor="//@figures.0/@descriptors.12/@accessors.0"/>
   <labels name="DepartFirstEtapeExternalLabel" figure="DepartFirstEtapeExternalLabelFigure" elementIcon="false"/>
   <labels name="QuestionNextEtapeExternalLabel" figure="QuestionNextEtapeExternalLabelFigure" elementIcon="false"/>
   <labels name="ReponseRedirigableQuestionRedirectExternalLabel" figure="ReponseRedirigableQuestionRedirectExternalLabelFigure" elementIcon="false"/>

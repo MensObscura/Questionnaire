@@ -17,23 +17,25 @@
   <eClassifiers xsi:type="ecore:EClass" name="Depart" eSuperTypes="#//Etape">
     <eAnnotations source="gmf.node">
       <details key="label" value="nom"/>
-      <details key="label.text" value="DÃ©part"/>
+      <details key="label.text" value="Depart"/>
       <details key="label.readOnly" value="true"/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="Depart"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="firstEtape" eType="#//Etape">
       <eAnnotations source="gmf.link">
         <details key="target.decoration" value="arrow"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Arrive" eSuperTypes="#//Etape">
     <eAnnotations source="gmf.node">
       <details key="label" value="nom"/>
-      <details key="label.text" value="ArrivÃ©e"/>
+      <details key="label.text" value="Arrivee"/>
       <details key="label.readOnly" value="true"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="Arrivee"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QuestionOuverte" eSuperTypes="#//Question #//ElementAvecNom">
     <eStructuralFeatures xsi:type="ecore:EReference" name="reponse" lowerBound="1"
@@ -52,7 +54,7 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QuestionChoixMultiple" eSuperTypes="#//Question #//ElementAvecNom">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="reponse" lowerBound="2"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reponses" lowerBound="2"
         upperBound="-1" eType="#//ReponseChoix" containment="true">
       <eAnnotations source="gmf.compartment"/>
     </eStructuralFeatures>
@@ -71,7 +73,8 @@
       <details key="label.text" value="Oui"/>
       <details key="label.readOnly" value="true"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="oui"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReponseNon" eSuperTypes="#//ReponseRedirigable">
     <eAnnotations source="gmf.node">
@@ -79,15 +82,20 @@
       <details key="label.text" value="Non"/>
       <details key="label.readOnly" value="true"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="non"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReponseChoix" eSuperTypes="#//ElementAvecNom #//ReponseRedirigable"/>
   <eClassifiers xsi:type="ecore:EClass" name="Question" eSuperTypes="#//Etape">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="intitule"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="nextEtape" eType="#//Etape">
       <eAnnotations source="gmf.link">
         <details key="target.decoration" value="arrow"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="intitule" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Etape"/>
   <eClassifiers xsi:type="ecore:EClass" name="Reponse"/>

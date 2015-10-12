@@ -12,7 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link questionnaire.QuestionChoixMultiple#getReponse <em>Reponse</em>}</li>
+ *   <li>{@link questionnaire.QuestionChoixMultiple#getReponses <em>Reponses</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,19 +22,19 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface QuestionChoixMultiple extends Question, ElementAvecNom {
 	/**
-	 * Returns the value of the '<em><b>Reponse</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Reponses</b></em>' containment reference list.
 	 * The list contents are of type {@link questionnaire.ReponseChoix}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Reponse</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Reponses</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Reponse</em>' containment reference list.
-	 * @see questionnaire.QuestionnairePackage#getQuestionChoixMultiple_Reponse()
+	 * @return the value of the '<em>Reponses</em>' containment reference list.
+	 * @see questionnaire.QuestionnairePackage#getQuestionChoixMultiple_Reponses()
 	 * @model containment="true" lower="2"
 	 * @generated
 	 */
-	EList<ReponseChoix> getReponse();
+	EList<ReponseChoix> getReponses();
 
 } // QuestionChoixMultiple

@@ -33,7 +33,7 @@ public class ReponseOuiImpl extends ReponseRedirigableImpl implements ReponseOui
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NOM_EDEFAULT = null;
+	protected static final String NOM_EDEFAULT = "oui";
 
 	/**
 	 * The cached value of the '{@link #getNom() <em>Nom</em>}' attribute.
